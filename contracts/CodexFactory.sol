@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.18;
+
+// Uncomment this line to use console.log
+// import "hardhat/console.sol";
+
+
+import {Codex} from "./Codex.sol";
+
+contract CodexFactory {
+
+	address public immutable implementation;
+
+
+	event CreatedCodex();
+
+	function createNewCodex() external payable {
+
+	}
+
+}
