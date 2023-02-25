@@ -55,7 +55,7 @@ contract CodexFactory is ICodexFactory, OwnableUpgradeable, UUPSUpgradeable, Cod
 			owner: initialOwner
 		});
 
-	} 
+	}
 
 	function addNewMetadataRenderer(address _renderer) external {
 		require(_renderer != address(0), "CANNOT BE ZERO");

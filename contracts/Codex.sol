@@ -34,9 +34,13 @@ contract Codex is ICodex, ERC721Upgradeable, UUPSUpgradeable, ReentrancyGuardUpg
 		_grantRole(DEFAULT_ADMIN_ROLE, _initialOwner);
 		//_setOwner(_initialOwner);
 
-
-
+		//mint tokenId 1 to the artist/creator. The live on-chain "app" of codex
 	}
+
+	function tokenURI(uint256 tokenId) public view override returns (string memory) {
+		return "";
+	}
+
 
 	function _authorizeUpgrade(address _newImplementation) internal override onlyAdmin {}
 
