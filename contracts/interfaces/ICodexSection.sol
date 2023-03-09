@@ -7,7 +7,8 @@ interface ICodexSection {
 	enum ConnectionType { 
 		REFERENCE,
 		DERIVATIVE,
-		INSPIRATION
+		INSPIRATION,
+		OTHER
 	}
 	
 
@@ -15,8 +16,9 @@ interface ICodexSection {
 		uint256 tokenIdA;
 		uint256 tokenIdB;
 		uint256 createdAt;
+		address createdBy;
 		ConnectionType connType;
-		string commentary;
+		string comment;
 	}
 	
 }
