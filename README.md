@@ -49,10 +49,10 @@ With this information recorded in the protocol, artists could create sections in
 
 ```
 {
-	"title": "...",
-	"image": "...",
-	"description": "...",
-	"codex": "probably-the-section-address",
+ "title": "...",
+ "image": "...",
+ "description": "...",
+ "codex": "probably-the-section-address",
 }
 
 ```
