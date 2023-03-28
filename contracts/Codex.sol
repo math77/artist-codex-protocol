@@ -12,41 +12,41 @@ import {ICodex} from "./interfaces/ICodex.sol";
 
 contract Codex is ICodex, ERC721Upgradeable, UUPSUpgradeable, ReentrancyGuardUpgradeable, AccessControlUpgradeable {
 
-	modifier onlyAdmin() { 
-		if(!hasRole(DEFAULT_ADMIN_ROLE, _msgSender())) {
-			revert AccessOnlyAdmin();
-		}
-		_; 
-	}
-	
+  modifier onlyAdmin() { 
+    if(!hasRole(DEFAULT_ADMIN_ROLE, _msgSender())) {
+      revert AccessOnlyAdmin();
+    }
+    _; 
+  }
+  
 
-	function initialize(
-		string memory _codexName,
-		string memory _codexSymbol,
-		string memory _codexDescription,
-		address _initialOwner,
-		address _renderer
-	) public initializer {
-		__ERC721_init(_codexName, _codexSymbol);
-		__AccessControl_init();
-		__ReentrancyGuard_init();
+  function initialize(
+    string memory _codexName,
+    string memory _codexSymbol,
+    string memory _codexDescription,
+    address _initialOwner,
+    address _renderer
+  ) public initializer {
+    __ERC721_init(_codexName, _codexSymbol);
+    __AccessControl_init();
+    __ReentrancyGuard_init();
 
-		_grantRole(DEFAULT_ADMIN_ROLE, _initialOwner);
-		//_setOwner(_initialOwner);
+    _grantRole(DEFAULT_ADMIN_ROLE, _initialOwner);
+    //_setOwner(_initialOwner);
 
-		//mint tokenId 1 to the artist/creator. The live on-chain "app" of codex
-	}
+    //mint tokenId 1 to the artist/creator. The live on-chain "app" of codex
+  }
 
-	function tokenURI(uint256 tokenId) public view override returns (string memory) {
-		return "";
-	}
+  function tokenURI(uint256 tokenId) public view override returns (string memory) {
+    return "";
+  }
 
 
-	function _authorizeUpgrade(address _newImplementation) internal override onlyAdmin {}
+  function _authorizeUpgrade(address _newImplementation) internal override onlyAdmin {}
 
-	function supportsInterface(bytes4 interfaceId) public view override(ERC721Upgradeable, AccessControlUpgradeable) returns (bool) {
-		return 
-			super.supportsInterface(interfaceId) ||
-			type(ICodex).interfaceId == interfaceId;
-	}
+  function supportsInterface(bytes4 interfaceId) public view override(ERC721Upgradeable, AccessControlUpgradeable) returns (bool) {
+    return 
+      super.supportsInterface(interfaceId) ||
+      type(ICodex).interfaceId == interfaceId;
+  }
 }

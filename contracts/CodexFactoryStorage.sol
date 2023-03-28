@@ -5,5 +5,5 @@ pragma solidity ^0.8.18;
 // import "hardhat/console.sol";
 
 abstract contract CodexFactoryStorage {
-	address[] public metadataRenderers;
+  address[] public metadataRenderers;
 }
